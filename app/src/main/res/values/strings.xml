@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DicodingMovieApp</string>
+
+    <string name="edit_text_hint">Input Film Title here</string>
+    <string name="search_button_text">Search</string>
+    <string name="synopsis_titleTV">Synopsis</string>
+</resources>

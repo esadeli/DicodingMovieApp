@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="normal_padding">8dp</dimen>
+    <dimen name="small_padding">4dp</dimen>
+
+    <dimen name="rectangle_border_width">1dp</dimen>
+    <dimen name="rectangle_border_corner_radius">3dp</dimen>
+
+    <dimen name="search_edit_text_margin">40dp</dimen>
+
+    <dimen name="rating_vs_release_date_margin">@dimen/search_edit_text_margin</dimen>
+
+</resources>
