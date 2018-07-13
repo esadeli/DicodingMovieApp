@@ -27,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    private static final String APIKEY = "36320bfbf2cb411937facb714b03f735";
-
     private static final String ADULTPARAM = "false";
 
 
@@ -87,8 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void fetchData(String title) {
 
         //URL Key
-        String URL = "https://api.themoviedb.org/3/search/movie?api_key=" + APIKEY + "&include_adult=" + ADULTPARAM + "&query=" + title;
-        ;
+        String URL = "https://api.themoviedb.org/3/search/movie?api_key=" + BuildConfig.API_KEY + "&include_adult=" + ADULTPARAM + "&query=" + title;
 
         Log.d(LOG_TAG, "Testing fetchData Running");
 
