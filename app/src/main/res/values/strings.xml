@@ -4,4 +4,10 @@
     <string name="edit_text_hint">Input Film Title here</string>
     <string name="search_button_text">Search</string>
     <string name="synopsis_titleTV">Synopsis</string>
+
+    <!-- Tab title -->
+    <string name="playing_now_movie">Playing Now</string>
+    <string name="upcoming_movie">Upcoming</string>
+    <string name="search_movie">Search</string>
+
 </resources>

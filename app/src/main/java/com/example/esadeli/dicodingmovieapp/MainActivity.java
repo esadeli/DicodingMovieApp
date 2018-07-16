@@ -1,5 +1,8 @@
 package com.example.esadeli.dicodingmovieapp;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -27,18 +30,19 @@ import com.example.esadeli.dicodingmovieapp.data.urlLink;
 /**
  * Updating GitHub due to the first push did not involve all files in the DicodingMovieApp folder
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+//public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    public class MainActivity extends AppCompatActivity {
 
-    private static final String LOG_TAG = MainActivity.class.getSimpleName();
+//    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
 //    private static final String ADULTPARAM = "false";
 
 
-    private ArrayList<movieData> movieDataList = new ArrayList<>();
-
-    private movieDataAdapter adapter;
-    private EditText search;
-    private String searchByTitle; //Dinosaur used for testing
+//    private ArrayList<movieData> movieDataList = new ArrayList<>();
+//
+//    private movieDataAdapter adapter;
+//    private EditText search;
+//    private String searchByTitle; //Dinosaur used for testing
 
 
     @Override
@@ -46,43 +50,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button searchBtn = findViewById(R.id.btn_search);
 
-        Log.d(LOG_TAG, "Search Keyword: " + searchByTitle);
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        MoviePagerAdapter pagerAdapter =
+                new MoviePagerAdapter(MainActivity.this,getSupportFragmentManager());
+        viewPager.setAdapter(pagerAdapter);
 
-        searchBtn.setOnClickListener(this);
+        TabLayout tabLayout = findViewById(R.id.tab_id);
+        tabLayout.setupWithViewPager(viewPager);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        adapter = new movieDataAdapter(this, movieDataList);
-
-        RecyclerView movieRecView = findViewById(R.id.movie_list_rv);
-        movieRecView.setLayoutManager(layoutManager);
-        movieRecView.setHasFixedSize(true);
-
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(movieRecView.getContext(),
-                layoutManager.getOrientation());
-
-        movieRecView.addItemDecoration(dividerItemDecoration);
-        movieRecView.setAdapter(adapter);
-
-        fetchDataUtils.fetchData(urlLink.urlSearch,movieDataList,adapter);
+//        Button searchBtn = findViewById(R.id.btn_search);
+//
+//        Log.d(LOG_TAG, "Search Keyword: " + searchByTitle);
+//
+//        searchBtn.setOnClickListener(this);
+//
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+//
+//        adapter = new movieDataAdapter(this, movieDataList);
+//
+//        RecyclerView movieRecView = findViewById(R.id.movie_list_rv);
+//        movieRecView.setLayoutManager(layoutManager);
+//        movieRecView.setHasFixedSize(true);
+//
+//        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(movieRecView.getContext(),
+//                layoutManager.getOrientation());
+//
+//        movieRecView.addItemDecoration(dividerItemDecoration);
+//        movieRecView.setAdapter(adapter);
+//
+//        fetchDataUtils.fetchData(urlLink.urlSearch,movieDataList,adapter);
 
         //getDummyData(); // for recyclerView testing only
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn_search) {
-            search = findViewById(R.id.searchEditText);
-            searchByTitle = search.getText().toString().trim();
-
-            Log.d(LOG_TAG, "Testing onClick, searchByTitle: " + searchByTitle);
-            movieDataList.clear();
-            //fetchData(searchByTitle);
-        }
-    }
+//    @Override
+//    public void onClick(View v) {
+//        if (v.getId() == R.id.btn_search) {
+//            search = findViewById(R.id.searchEditText);
+//            searchByTitle = search.getText().toString().trim();
+//
+//            Log.d(LOG_TAG, "Testing onClick, searchByTitle: " + searchByTitle);
+//            movieDataList.clear();
+//            //fetchData(searchByTitle);
+//        }
+//    }
 
 //    /**
 //     * Function to fetch data from interment
