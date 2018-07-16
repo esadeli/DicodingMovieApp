@@ -24,6 +24,7 @@ public final class fetchDataUtils {
 
     private static final String LOG_TAG = fetchDataUtils.class.getSimpleName();
 
+
     public static void fetchData(String URL, final ArrayList<movieData> movieDataList, final movieDataAdapter adapter){
 
         Log.d(LOG_TAG,"testing Fetch Data");

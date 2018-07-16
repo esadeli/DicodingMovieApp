@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -19,10 +21,13 @@ import com.example.esadeli.dicodingmovieapp.data.urlLink;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SearchFragment extends Fragment {
+public class SearchFragment extends Fragment implements View.OnClickListener{
 
     private ArrayList<movieData> movieDataList = new ArrayList<>();
     private movieDataAdapter adapter;
+
+    private EditText searchEditText;
+    private String title;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -32,9 +37,15 @@ public class SearchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_search,container,false);
+
+        //Instantiate Button and EditText object
+        Button searchBtn = view.findViewById(R.id.btn_search);
+        searchBtn.setOnClickListener(this);
+
+        searchEditText = view.findViewById(R.id.searchEditText);
+
 
         adapter = new movieDataAdapter(getContext(),movieDataList);
 
@@ -52,9 +63,17 @@ public class SearchFragment extends Fragment {
 
         recView.setAdapter(adapter);
 
-        fetchDataUtils.fetchData(urlLink.urlSearch,movieDataList,adapter);
-
         return view;
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.btn_search){
+
+            title = searchEditText.getText().toString().trim();
+
+            movieDataList.clear();
+            fetchDataUtils.fetchData(urlLink.formUrlSearch(title),movieDataList,adapter);
+        }
+    }
 }

@@ -50,6 +50,8 @@ public class UpcomingFragment extends Fragment {
 
         recView.setAdapter(adapter);
 
+        movieDataList.clear();
+
         //fetch data from Internet
         fetchDataUtils.fetchData(urlLink.urlUpcoming,movieDataList,adapter);
 

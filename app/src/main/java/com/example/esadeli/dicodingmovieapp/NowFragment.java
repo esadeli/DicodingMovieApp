@@ -50,6 +50,8 @@ public class NowFragment extends Fragment {
 
         recView.setAdapter(adapter);
 
+        movieDataList.clear();
+
         //fetch data from Internet
         fetchDataUtils.fetchData(urlLink.urlNOW,movieDataList,adapter);
 

@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide;
  *
  */
 public class MovieDetailActivity extends AppCompatActivity {
-    private static final String LOG_TAG=MovieDetailActivity.class.getSimpleName();
 
     public static String EXTRA_IMG_URL= "extra-img-url";
     public static String EXTRA_TITLE = "extra-title";
@@ -29,12 +28,12 @@ public class MovieDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_detail);
 
 
-        detailTitleTV = (TextView)findViewById(R.id.titleDetailTV);
-        detailRatingTV = (TextView)findViewById(R.id.ratingDetailTV);
-        detailRelDateTV = (TextView)findViewById(R.id.releaseDateDetailTV);
-        detailSynopsisTV = (TextView) findViewById(R.id.synopsisTV);
+        detailTitleTV = findViewById(R.id.titleDetailTV);
+        detailRatingTV = findViewById(R.id.ratingDetailTV);
+        detailRelDateTV = findViewById(R.id.releaseDateDetailTV);
+        detailSynopsisTV = findViewById(R.id.synopsisTV);
 
-        detailPosterImg = (ImageView)findViewById(R.id.big_poster_img);
+        detailPosterImg = findViewById(R.id.big_poster_img);
 
         String titleDetail = getIntent().getStringExtra(EXTRA_TITLE);
         String imgUrlDetail = getIntent().getStringExtra(EXTRA_IMG_URL);
