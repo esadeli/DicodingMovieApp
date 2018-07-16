@@ -53,7 +53,7 @@ public class NowFragment extends Fragment {
         movieDataList.clear();
 
         //fetch data from Internet
-        fetchDataUtils.fetchData(urlLink.urlNOW,movieDataList,adapter);
+        fetchDataUtils.fetchData(getContext(),urlLink.urlNOW,movieDataList,adapter);
 
         return view;
     }

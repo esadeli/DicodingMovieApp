@@ -73,7 +73,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
             title = searchEditText.getText().toString().trim();
 
             movieDataList.clear();
-            fetchDataUtils.fetchData(urlLink.formUrlSearch(title),movieDataList,adapter);
+            fetchDataUtils.fetchData(getContext(),urlLink.formUrlSearch(title),movieDataList,adapter);
         }
     }
 }

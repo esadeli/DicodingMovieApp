@@ -53,7 +53,7 @@ public class UpcomingFragment extends Fragment {
         movieDataList.clear();
 
         //fetch data from Internet
-        fetchDataUtils.fetchData(urlLink.urlUpcoming,movieDataList,adapter);
+        fetchDataUtils.fetchData(getContext(),urlLink.urlUpcoming,movieDataList,adapter);
 
         return view;
     }

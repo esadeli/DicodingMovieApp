@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 
+import com.example.esadeli.dicodingmovieapp.MainActivity;
+
 import java.util.Locale;
 
 /**
@@ -23,7 +25,7 @@ public final class localLang {
                 config, context.getResources().getDisplayMetrics()
         );
 
-        //Intent refreshApp = new Intent(context, MainActivity.class);
-        //context.startActivity(refreshApp);
+        Intent refreshApp = new Intent(context, MainActivity.class);
+        context.startActivity(refreshApp);
     }
 }

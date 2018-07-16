@@ -2,12 +2,22 @@
     <string name="app_name">DicodingMovieApp</string>
 
     <string name="edit_text_hint">Input Film Title here</string>
-    <string name="search_button_text">Search</string>
     <string name="synopsis_titleTV">Synopsis</string>
+
+    <string name="search_button_text">Search</string>
+
+    <!-- Detail Information -->
+    <string name="detail_movie_title">Detail movie</string>
+    <string name="rating_label">Rating :</string>
+    <string name="release_date_label">Release Date: </string>
 
     <!-- Tab title -->
     <string name="playing_now_movie">Playing Now</string>
     <string name="upcoming_movie">Upcoming</string>
     <string name="search_movie">Search</string>
+
+    <!-- Setting Language Option -->
+    <string name="id_lang">Indonesian</string>
+    <string name="en_lang">English</string>
 
 </resources>

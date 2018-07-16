@@ -1,7 +1,9 @@
 package com.example.esadeli.dicodingmovieapp.utility;
 
+import android.content.Context;
 import android.util.Log;
 
+import com.example.esadeli.dicodingmovieapp.R;
 import com.example.esadeli.dicodingmovieapp.movieData;
 import com.example.esadeli.dicodingmovieapp.movieDataAdapter;
 import com.loopj.android.http.AsyncHttpClient;
@@ -22,19 +24,14 @@ import cz.msebera.android.httpclient.Header;
 
 public final class fetchDataUtils {
 
-    private static final String LOG_TAG = fetchDataUtils.class.getSimpleName();
-
-
-    public static void fetchData(String URL, final ArrayList<movieData> movieDataList, final movieDataAdapter adapter){
-
-        Log.d(LOG_TAG,"testing Fetch Data");
+    public static void fetchData(Context mContext, String URL, final ArrayList<movieData> movieDataList, final movieDataAdapter adapter){
 
         // Basic URL for image
         final String imageURL = "http://image.tmdb.org/t/p/w92/";
 
         // Title/Label for Rating and Release Date:
-        final String ratingLabel = "Rating: ";
-        final String releaseDateLabel = "Release Date: ";
+        final String ratingLabel = mContext.getResources().getString(R.string.rating_label);
+        final String releaseDateLabel = mContext.getResources().getString(R.string.release_date_label);
 
         AsyncHttpClient client = new AsyncHttpClient();
 
@@ -42,7 +39,6 @@ public final class fetchDataUtils {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
 
-                Log.d(LOG_TAG,"Testing onSuccess");
                 String result = new String(responseBody);
                 try{
                     JSONObject results = new JSONObject(result);
@@ -78,7 +74,7 @@ public final class fetchDataUtils {
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Log.d(LOG_TAG,"testing onFailure");
+
             }
         });
     }
