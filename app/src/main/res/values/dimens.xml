@@ -13,4 +13,7 @@
 
     <dimen name="rating_vs_release_date_margin">@dimen/search_edit_text_margin</dimen>
 
+    <dimen name="margin_start_collapse_bar">48dp</dimen>
+    <dimen name="margin_end_collapse_bar">64dp</dimen>
+
 </resources>

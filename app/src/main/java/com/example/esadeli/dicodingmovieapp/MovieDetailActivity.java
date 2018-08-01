@@ -19,21 +19,18 @@ public class MovieDetailActivity extends AppCompatActivity {
     public static String EXTRA_REL_DATE = "extra-rel-date";
     public static String EXTRA_SYNOPSIS = "extra-synopsis";
 
-    private TextView detailTitleTV, detailRatingTV, detailRelDateTV, detailSynopsisTV;
-    private ImageView detailPosterImg;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
 
-        detailTitleTV = findViewById(R.id.titleDetailTV);
-        detailRatingTV = findViewById(R.id.ratingDetailTV);
-        detailRelDateTV = findViewById(R.id.releaseDateDetailTV);
-        detailSynopsisTV = findViewById(R.id.synopsisTV);
+        TextView detailTitleTV = findViewById(R.id.titleDetailTV);
+        TextView detailRatingTV = findViewById(R.id.ratingDetailTV);
+        TextView detailRelDateTV = findViewById(R.id.releaseDateDetailTV);
+        TextView detailSynopsisTV = findViewById(R.id.synopsisTV);
 
-        detailPosterImg = findViewById(R.id.big_poster_img);
+        ImageView detailPosterImg = findViewById(R.id.big_poster_img);
 
         String titleDetail = getIntent().getStringExtra(EXTRA_TITLE);
         String imgUrlDetail = getIntent().getStringExtra(EXTRA_IMG_URL);
@@ -45,6 +42,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         detailRatingTV.setText(ratingDetail);
         detailRelDateTV.setText(relDateDetail);
         detailSynopsisTV.setText(synopsisDetail);
+        detailPosterImg.setContentDescription(titleDetail);
 
         Glide.with(this)
                 .load(imgUrlDetail)
