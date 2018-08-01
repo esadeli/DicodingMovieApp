@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
+import com.example.esadeli.dicodingmovieapp.adapter.movieDataAdapter;
+import com.example.esadeli.dicodingmovieapp.model.movieData;
 import com.example.esadeli.dicodingmovieapp.utility.fetchDataUtils;
 import com.example.esadeli.dicodingmovieapp.data.urlLink;
 

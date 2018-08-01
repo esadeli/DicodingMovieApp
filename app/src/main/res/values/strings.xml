@@ -4,7 +4,7 @@
     <string name="edit_text_hint">Input Film Title here</string>
     <string name="synopsis_titleTV">Synopsis</string>
 
-    <string name="search_button_text">Search</string>
+    <string name="search_text">Search</string>
 
     <!-- Detail Information -->
     <string name="detail_movie_title">Detail movie</string>

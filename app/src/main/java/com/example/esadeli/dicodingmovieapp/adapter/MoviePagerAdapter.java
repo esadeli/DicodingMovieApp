@@ -1,9 +1,14 @@
-package com.example.esadeli.dicodingmovieapp;
+package com.example.esadeli.dicodingmovieapp.adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.example.esadeli.dicodingmovieapp.NowFragment;
+import com.example.esadeli.dicodingmovieapp.R;
+import com.example.esadeli.dicodingmovieapp.SearchFragment;
+import com.example.esadeli.dicodingmovieapp.UpcomingFragment;
 
 /**
  * Created by esadeli on 16/07/18.
@@ -15,7 +20,7 @@ public class MoviePagerAdapter extends FragmentPagerAdapter {
 
     private Context mContext;
 
-    MoviePagerAdapter(Context context, FragmentManager fm) {
+    public MoviePagerAdapter(Context context, FragmentManager fm) {
 
         super(fm);
         mContext = context;

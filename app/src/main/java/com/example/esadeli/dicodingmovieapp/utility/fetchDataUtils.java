@@ -1,11 +1,10 @@
 package com.example.esadeli.dicodingmovieapp.utility;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.esadeli.dicodingmovieapp.R;
-import com.example.esadeli.dicodingmovieapp.movieData;
-import com.example.esadeli.dicodingmovieapp.movieDataAdapter;
+import com.example.esadeli.dicodingmovieapp.model.movieData;
+import com.example.esadeli.dicodingmovieapp.adapter.movieDataAdapter;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 

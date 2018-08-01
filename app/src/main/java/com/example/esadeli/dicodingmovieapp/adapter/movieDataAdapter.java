@@ -1,4 +1,4 @@
-package com.example.esadeli.dicodingmovieapp;
+package com.example.esadeli.dicodingmovieapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.esadeli.dicodingmovieapp.MovieDetailActivity;
+import com.example.esadeli.dicodingmovieapp.R;
+import com.example.esadeli.dicodingmovieapp.model.movieData;
 
 import java.util.ArrayList;
 

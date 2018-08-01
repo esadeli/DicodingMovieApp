@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.esadeli.dicodingmovieapp.adapter.MoviePagerAdapter;
 import com.example.esadeli.dicodingmovieapp.utility.localLang;
 
 /**

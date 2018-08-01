@@ -6,14 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
 import java.util.ArrayList;
 
+import com.example.esadeli.dicodingmovieapp.adapter.movieDataAdapter;
+import com.example.esadeli.dicodingmovieapp.model.movieData;
 import com.example.esadeli.dicodingmovieapp.utility.fetchDataUtils;
 import com.example.esadeli.dicodingmovieapp.data.urlLink;
 
@@ -21,13 +22,11 @@ import com.example.esadeli.dicodingmovieapp.data.urlLink;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SearchFragment extends Fragment implements View.OnClickListener{
+//public class SearchFragment extends Fragment implements View.OnClickListener{
+public class SearchFragment extends Fragment{
 
     private ArrayList<movieData> movieDataList = new ArrayList<>();
     private movieDataAdapter adapter;
-
-    private EditText searchEditText;
-    private String title;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -39,13 +38,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_search,container,false);
-
-        //Instantiate Button and EditText object
-        Button searchBtn = view.findViewById(R.id.btn_search);
-        searchBtn.setOnClickListener(this);
-
-        searchEditText = view.findViewById(R.id.searchEditText);
-
 
         adapter = new movieDataAdapter(getContext(),movieDataList);
 
@@ -63,17 +55,25 @@ public class SearchFragment extends Fragment implements View.OnClickListener{
 
         recView.setAdapter(adapter);
 
+
+        //Set SearchView
+        android.support.v7.widget.SearchView searchView = view.findViewById(R.id.search);
+        searchView.setQueryHint(getResources().getString(R.string.search_text));
+        searchView.setOnQueryTextListener(new android.support.v7.widget.SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                movieDataList.clear();
+
+                fetchDataUtils.fetchData(getContext(),urlLink.formUrlSearch(query),movieDataList,adapter);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
         return view;
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(v.getId()==R.id.btn_search){
-
-            title = searchEditText.getText().toString().trim();
-
-            movieDataList.clear();
-            fetchDataUtils.fetchData(getContext(),urlLink.formUrlSearch(title),movieDataList,adapter);
-        }
     }
 }

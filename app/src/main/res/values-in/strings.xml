@@ -8,7 +8,7 @@
     <string name="search_movie">Cari Film</string>
     <string name="id_lang">B. Indonesia</string>
     <string name="en_lang">B. Inggris</string>
-    <string name="search_button_text">Cari</string>
+    <string name="search_text">Cari</string>
     <string name="rating_label">Peringkat:</string>
     <string name="release_date_label">Tanggal Release:</string>
     <string name="detail_movie_title">Detail film</string>

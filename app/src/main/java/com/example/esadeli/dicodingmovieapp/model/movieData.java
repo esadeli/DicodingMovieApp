@@ -1,4 +1,4 @@
-package com.example.esadeli.dicodingmovieapp;
+package com.example.esadeli.dicodingmovieapp.model;
 
 /**
  * Created by esadeli on 04/07/18.
