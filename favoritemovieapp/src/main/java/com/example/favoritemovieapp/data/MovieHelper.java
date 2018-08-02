@@ -1,4 +1,4 @@
-package com.example.esadeli.dicodingmovieapp.data;
+package com.example.favoritemovieapp.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,9 +9,8 @@ import android.database.sqlite.SQLiteDatabase;
 import static android.provider.BaseColumns._ID;
 
 /**
- * Created by esadeli on 01/08/18.
+ * Created by esadeli on 02/08/18.
  *
- * Class for CRUD activity
  */
 
 public class MovieHelper {
@@ -26,7 +25,7 @@ public class MovieHelper {
     }
 
     //Utility method to open and close database
-    public MovieHelper open() throws SQLException{
+    public MovieHelper open() throws SQLException {
         databaseHelper = new DatabaseHelper(context);
         database = databaseHelper.getWritableDatabase();
         return  this;
