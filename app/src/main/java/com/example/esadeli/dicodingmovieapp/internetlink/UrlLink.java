@@ -1,4 +1,4 @@
-package com.example.esadeli.dicodingmovieapp.data;
+package com.example.esadeli.dicodingmovieapp.internetlink;
 
 import com.example.esadeli.dicodingmovieapp.BuildConfig;
 
@@ -8,7 +8,7 @@ import com.example.esadeli.dicodingmovieapp.BuildConfig;
  * Data class to store URL information
  */
 
-public final class urlLink {
+public final class UrlLink {
 
     private static final String ADULTPARAM = "false";
 

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.esadeli.dicodingmovieapp.MovieDetailActivity;
 import com.example.esadeli.dicodingmovieapp.R;
-import com.example.esadeli.dicodingmovieapp.model.movieData;
+import com.example.esadeli.dicodingmovieapp.model.MovieData;
 
 import java.util.ArrayList;
 
@@ -24,12 +24,12 @@ import java.util.ArrayList;
  * Adapter for displaying movie data, extension of RecyclerView class
  */
 
-public class movieDataAdapter extends RecyclerView.Adapter<movieDataAdapter.movieDataHolder> {
+public class MovieDataAdapter extends RecyclerView.Adapter<MovieDataAdapter.movieDataHolder> {
 
-    private ArrayList<movieData> movieList;
+    private ArrayList<MovieData> movieList;
     private Context mContext;
 
-    public movieDataAdapter(Context mContext, ArrayList<movieData> movieList) {
+    public MovieDataAdapter(Context mContext, ArrayList<MovieData> movieList) {
         this.movieList = movieList;
         this.mContext = mContext;
     }

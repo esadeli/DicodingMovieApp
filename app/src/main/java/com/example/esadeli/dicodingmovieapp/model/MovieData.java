@@ -5,7 +5,7 @@ package com.example.esadeli.dicodingmovieapp.model;
  *
  * POJO Class for simple and detailed movie data
  */
-public class movieData {
+public class MovieData {
 
 
     private String title;
@@ -14,8 +14,8 @@ public class movieData {
     private String rating;
     private String overview;
 
-    public movieData(String title, String rating,
-                     String releaseDate, String imageLink,  String overview) {
+    public MovieData(String title, String rating,
+                     String releaseDate, String imageLink, String overview) {
         this.title = title;
         this.releaseDate = releaseDate;
         this.imageLink = imageLink;

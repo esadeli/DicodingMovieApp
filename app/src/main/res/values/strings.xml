@@ -11,10 +11,16 @@
     <string name="rating_label">Rating :</string>
     <string name="release_date_label">Release Date: </string>
 
+    <string name="button_save">Save as favorite</string>
+
+    <!-- To disable button save in Detail Activity-->
+    <string name="button_save_disabled">favorite-movie</string>
+
     <!-- Tab title -->
     <string name="playing_now_movie">Playing Now</string>
     <string name="upcoming_movie">Upcoming</string>
     <string name="search_movie">Search</string>
+    <string name="favorite">Favorite</string>
 
     <!-- Setting Language Option -->
     <string name="id_lang">Indonesian</string>

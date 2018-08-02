@@ -12,4 +12,7 @@
     <string name="rating_label">Peringkat:</string>
     <string name="release_date_label">Tanggal Release:</string>
     <string name="detail_movie_title">Detail film</string>
+    <string name="favorite">Favorit</string>
+    <string name="button_save">Simpan favorit</string>
+    <string name="button_delete">Hapus</string>
 </resources>

@@ -55,6 +55,13 @@
                 android:paddingBottom="@dimen/small_padding"
                 tools:text="Jurrasic Park"/>
 
+            <Button
+                android:id="@+id/database_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_padding"
+                tools:text="@string/button_save"/>
+
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"

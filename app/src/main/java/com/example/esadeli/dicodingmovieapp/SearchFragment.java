@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import com.example.esadeli.dicodingmovieapp.adapter.movieDataAdapter;
-import com.example.esadeli.dicodingmovieapp.model.movieData;
+import com.example.esadeli.dicodingmovieapp.adapter.MovieDataAdapter;
+import com.example.esadeli.dicodingmovieapp.model.MovieData;
 import com.example.esadeli.dicodingmovieapp.utility.fetchDataUtils;
-import com.example.esadeli.dicodingmovieapp.data.urlLink;
+import com.example.esadeli.dicodingmovieapp.internetlink.UrlLink;
 
 
 /**
@@ -25,8 +25,8 @@ import com.example.esadeli.dicodingmovieapp.data.urlLink;
 //public class SearchFragment extends Fragment implements View.OnClickListener{
 public class SearchFragment extends Fragment{
 
-    private ArrayList<movieData> movieDataList = new ArrayList<>();
-    private movieDataAdapter adapter;
+    private ArrayList<MovieData> movieDataList = new ArrayList<>();
+    private MovieDataAdapter adapter;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -39,7 +39,7 @@ public class SearchFragment extends Fragment{
 
         View view = inflater.inflate(R.layout.fragment_search,container,false);
 
-        adapter = new movieDataAdapter(getContext(),movieDataList);
+        adapter = new MovieDataAdapter(getContext(),movieDataList);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -64,7 +64,7 @@ public class SearchFragment extends Fragment{
             public boolean onQueryTextSubmit(String query) {
                 movieDataList.clear();
 
-                fetchDataUtils.fetchData(getContext(),urlLink.formUrlSearch(query),movieDataList,adapter);
+                fetchDataUtils.fetchData(getContext(), UrlLink.formUrlSearch(query),movieDataList,adapter);
                 return true;
             }
 

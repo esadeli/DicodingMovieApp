@@ -12,18 +12,18 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import com.example.esadeli.dicodingmovieapp.adapter.movieDataAdapter;
-import com.example.esadeli.dicodingmovieapp.model.movieData;
+import com.example.esadeli.dicodingmovieapp.adapter.MovieDataAdapter;
+import com.example.esadeli.dicodingmovieapp.model.MovieData;
 import com.example.esadeli.dicodingmovieapp.utility.fetchDataUtils;
-import com.example.esadeli.dicodingmovieapp.data.urlLink;
+import com.example.esadeli.dicodingmovieapp.internetlink.UrlLink;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class UpcomingFragment extends Fragment {
 
-    private ArrayList<movieData> movieDataList = new ArrayList<>();
-    private movieDataAdapter adapter;
+    private ArrayList<MovieData> movieDataList = new ArrayList<>();
+    private MovieDataAdapter adapter;
 
 
     public UpcomingFragment() {
@@ -36,7 +36,7 @@ public class UpcomingFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_layout,container,false);
 
-        adapter = new movieDataAdapter(getContext(),movieDataList);
+        adapter = new MovieDataAdapter(getContext(),movieDataList);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -55,7 +55,7 @@ public class UpcomingFragment extends Fragment {
         movieDataList.clear();
 
         //fetch data from Internet
-        fetchDataUtils.fetchData(getContext(),urlLink.urlUpcoming,movieDataList,adapter);
+        fetchDataUtils.fetchData(getContext(), UrlLink.urlUpcoming,movieDataList,adapter);
 
         return view;
     }

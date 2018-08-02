@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.example.esadeli.dicodingmovieapp.FavoriteFragment;
 import com.example.esadeli.dicodingmovieapp.NowFragment;
 import com.example.esadeli.dicodingmovieapp.R;
 import com.example.esadeli.dicodingmovieapp.SearchFragment;
@@ -32,6 +33,8 @@ public class MoviePagerAdapter extends FragmentPagerAdapter {
             return new NowFragment();
         }else if(position == 1){
             return new UpcomingFragment();
+        } else if(position ==2){
+            return  new FavoriteFragment();
         }else{
             return new SearchFragment();
         }
@@ -40,7 +43,7 @@ public class MoviePagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
 
-        return 3;
+        return 4;
     }
 
     @Override
@@ -51,6 +54,8 @@ public class MoviePagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return mContext.getResources().getString(R.string.upcoming_movie);
             case 2:
+                return mContext.getResources().getString(R.string.favorite);
+            case 3:
                 return mContext.getResources().getString(R.string.search_movie);
             default:
                 return super.getPageTitle(position);

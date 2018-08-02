@@ -3,8 +3,8 @@ package com.example.esadeli.dicodingmovieapp.utility;
 import android.content.Context;
 
 import com.example.esadeli.dicodingmovieapp.R;
-import com.example.esadeli.dicodingmovieapp.model.movieData;
-import com.example.esadeli.dicodingmovieapp.adapter.movieDataAdapter;
+import com.example.esadeli.dicodingmovieapp.model.MovieData;
+import com.example.esadeli.dicodingmovieapp.adapter.MovieDataAdapter;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -23,7 +23,7 @@ import cz.msebera.android.httpclient.Header;
 
 public final class fetchDataUtils {
 
-    public static void fetchData(Context mContext, String URL, final ArrayList<movieData> movieDataList, final movieDataAdapter adapter){
+    public static void fetchData(Context mContext, String URL, final ArrayList<MovieData> movieDataList, final MovieDataAdapter adapter){
 
         // Basic URL for image
         final String imageURL = "http://image.tmdb.org/t/p/w92/";
@@ -58,7 +58,7 @@ public final class fetchDataUtils {
                         String releaseDate = releaseDateLabel + relDate;
                         String imageLink = imageURL + imageLinkextension;
 
-                        movieDataList.add(new movieData(title,
+                        movieDataList.add(new MovieData(title,
                                 filmRatePercent,
                                 releaseDate,
                                 imageLink,
